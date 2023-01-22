@@ -59,8 +59,8 @@ platform :ios do
     )
 
     build_app(
-      workspace: "./ScreenMe.xcodeproj/project.xcworkspace", 
-      scheme: "ScreenMe",
+      workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
+      scheme: "ActionOnSwift",
       configuration: "Release",
       export_method: "app-store",
       export_options: EXPORT_OPTIONS
