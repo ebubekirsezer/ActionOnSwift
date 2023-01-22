@@ -63,11 +63,7 @@ platform :ios do
       scheme: "ActionOnSwift",
       configuration: "Release",
       export_method: "app-store",
-      export_options: {
-        provisioningProfiles: { 
-            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER_MACOS
-        }
-      }
+      export_options: EXPORT_OPTIONS
     )
     upload_to_testflight
     delete_temp_keychain(keychain_name)
