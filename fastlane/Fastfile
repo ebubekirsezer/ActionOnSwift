@@ -58,17 +58,12 @@ platform :ios do
       api_key: api_key
     )
 
-    build_app(
+    build_ios_app(
       workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
       scheme: "ActionOnSwift",
       configuration: "Release",
       export_method: "app-store",
-      export_options: {
-        provisioningProfiles: { 
-            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER,
-            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER_MACOS
-        }
-      }
+      export_options: EXPORT_OPTIONS
     )
     upload_to_testflight
 
