@@ -40,9 +40,9 @@ platform :ios do
 
 
     app_store_connect_api_key(
-       key_id: APPSTORE_API_KEY_ID,
-       issuer_id: APPSTORE_ISSUER_ID,
-       key_content: APPSTORE_API_PRIVATE_KEY,
+       key_id: APPLE_KEY_ID,
+       issuer_id: APPLE_ISSUER_ID,
+       key_content: APPLE_KEY_CONTENT,
        duration: 1200, # optional (maximum 1200)
        in_house: false # optional but may be required if using match/sigh
      )
