@@ -65,7 +65,7 @@ platform :ios do
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
-            DEVELOPER_APP_ID => "match AppStore com.ebubekirsezer.ActionOnSwift macos (3a82b438-9798-43ad-b25c-7c8fcb472f7f)"
+            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER_MACOS
         }
       }
     )
