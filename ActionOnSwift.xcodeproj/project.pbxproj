@@ -18,7 +18,6 @@
 		CF620F96297C92E800EF8B6B /* ActionOnSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionOnSwiftApp.swift; sourceTree = "<group>"; };
 		CF620F98297C92E800EF8B6B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF620F9A297C92E900EF8B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CF620F9C297C92E900EF8B6B /* ActionOnSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOnSwift.entitlements; sourceTree = "<group>"; };
 		CF620F9E297C92E900EF8B6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CFC17FB1297D3C81008430BA /* ActionOnSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOnSwift.entitlements; sourceTree = "<group>"; };
 		CFC17FB2297D3C81008430BA /* ActionOnSwiftProduction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOnSwiftProduction.entitlements; sourceTree = "<group>"; };
@@ -58,7 +57,6 @@
 				CF620F96297C92E800EF8B6B /* ActionOnSwiftApp.swift */,
 				CF620F98297C92E800EF8B6B /* ContentView.swift */,
 				CF620F9A297C92E900EF8B6B /* Assets.xcassets */,
-				CF620F9C297C92E900EF8B6B /* ActionOnSwift.entitlements */,
 				CF620F9D297C92E900EF8B6B /* Preview Content */,
 			);
 			path = ActionOnSwift;
