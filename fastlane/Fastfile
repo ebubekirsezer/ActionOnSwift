@@ -57,7 +57,7 @@ platform :ios do
       api_key: api_key
     )
 
-    build_ios_app(
+    build_app(
       workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
       scheme: "ActionOnSwift",
       configuration: "Release",
