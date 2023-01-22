@@ -38,37 +38,55 @@ platform :ios do
     keychain_password = TEMP_KEYCHAIN_PASSWORD
     ensure_temp_keychain(keychain_name, keychain_password)
 
-    api_key = app_store_connect_api_key(
-      key_id: APPLE_KEY_ID,
-      issuer_id: APPLE_ISSUER_ID,
-      key_content: APPLE_KEY_CONTENT,            
-      duration: 1200,            
-      in_house: false
-    )
-    
-    increment_build_number(xcodeproj: "ActionOnSwift.xcodeproj")
 
-    match(
-      type: 'appstore',
-      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
-      git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
-      keychain_name: keychain_name,
-      keychain_password: keychain_password,
-      api_key: api_key
-    )
-
-    build_app(
+    app_store_connect_api_key(
+       key_id: APPSTORE_API_KEY_ID,
+       issuer_id: APPSTORE_ISSUER_ID,
+       key_content: APPSTORE_API_PRIVATE_KEY,
+       duration: 1200, # optional (maximum 1200)
+       in_house: false # optional but may be required if using match/sigh
+     )
+     
+     build_app(
       workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
       scheme: "ActionOnSwift",
       configuration: "Release",
       export_method: "app-store",
-      export_options: {
-        provisioningProfiles: { 
-            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
-        }
-      }
+      export_options: EXPORT_OPTIONS
     )
-    upload_to_testflight
+       upload_to_testflight
+
+    # api_key = app_store_connect_api_key(
+    #   key_id: APPLE_KEY_ID,
+    #   issuer_id: APPLE_ISSUER_ID,
+    #   key_content: APPLE_KEY_CONTENT,            
+    #   duration: 1200,            
+    #   in_house: false
+    # )
+    
+    # increment_build_number(xcodeproj: "ActionOnSwift.xcodeproj")
+
+    # match(
+    #   type: 'appstore',
+    #   app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+    #   git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
+    #   keychain_name: keychain_name,
+    #   keychain_password: keychain_password,
+    #   api_key: api_key
+    # )
+
+    # build_app(
+    #   workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
+    #   scheme: "ActionOnSwift",
+    #   configuration: "Release",
+    #   export_method: "app-store",
+    #   export_options: {
+    #     provisioningProfiles: { 
+    #         DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
+    #     }
+    #   }
+    # )
+    # upload_to_testflight
 
     # gym(
     #   configuration: "Release",
