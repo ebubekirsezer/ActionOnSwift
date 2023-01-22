@@ -50,7 +50,7 @@ platform :ios do
 
     match(
       type: 'appstore',
-      additional_cert_types: "additional_cert_types",
+      additional_cert_types: "mac_installer_distribution",
       app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
       git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
       keychain_name: keychain_name,
