@@ -4,8 +4,6 @@
 <dict>
 	<key>destination</key>
 	<string>export</string>
-	<key>installerSigningCertificate</key>
-	<string>3rd Party Mac Developer Installer</string>
 	<key>manageAppVersionAndBuildNumber</key>
 	<true/>
 	<key>method</key>
@@ -13,12 +11,14 @@
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.ebubekirsezer.ActionOnSwift</key>
-		<string>match AppStore com.ebubekirsezer.ActionOnSwift macos</string>
+		<string>match AppStore com.ebubekirsezer.ActionOnSwift</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>Apple Distribution</string>
 	<key>signingStyle</key>
 	<string>manual</string>
+	<key>stripSwiftSymbols</key>
+	<true/>
 	<key>teamID</key>
 	<string>7FX9FX9T59</string>
 	<key>uploadSymbols</key>
