@@ -20,6 +20,8 @@
 		CF620F9A297C92E900EF8B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF620F9C297C92E900EF8B6B /* ActionOnSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOnSwift.entitlements; sourceTree = "<group>"; };
 		CF620F9E297C92E900EF8B6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CFC17FB1297D3C81008430BA /* ActionOnSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOnSwift.entitlements; sourceTree = "<group>"; };
+		CFC17FB2297D3C81008430BA /* ActionOnSwiftProduction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOnSwiftProduction.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		CF620F95297C92E800EF8B6B /* ActionOnSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CFC17FB0297D3C52008430BA /* SupportingFiles */,
 				CF620F96297C92E800EF8B6B /* ActionOnSwiftApp.swift */,
 				CF620F98297C92E800EF8B6B /* ContentView.swift */,
 				CF620F9A297C92E900EF8B6B /* Assets.xcassets */,
@@ -67,6 +70,15 @@
 				CF620F9E297C92E900EF8B6B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CFC17FB0297D3C52008430BA /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CFC17FB1297D3C81008430BA /* ActionOnSwift.entitlements */,
+				CFC17FB2297D3C81008430BA /* ActionOnSwiftProduction.entitlements */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +273,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ActionOnSwift/ActionOnSwift.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ActionOnSwift/SupportingFiles/ActionOnSwift.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -305,7 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ActionOnSwift/ActionOnSwift.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ActionOnSwift/SupportingFiles/ActionOnSwiftProduction.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution";
