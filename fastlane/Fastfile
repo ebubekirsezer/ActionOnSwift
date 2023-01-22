@@ -60,7 +60,7 @@ platform :ios do
     gym(
       configuration: "Release",
       workspace: "ActionOnSwift.xcodeproj/project.xcworkspace",
-      scheme: "Release",
+      scheme: "ActionOnSwift",
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
