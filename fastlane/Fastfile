@@ -45,7 +45,7 @@ platform :ios do
       in_house: false
     )
     
-    increment_build_number(xcodeproj: "Booklopedia.xcodeproj")
+    increment_build_number(xcodeproj: "ActionOnSwift.xcodeproj")
     
     cocoapods(
       clean_install: true
@@ -63,7 +63,7 @@ platform :ios do
 
     gym(
       configuration: "Release",
-      workspace: "Booklopedia.xcworkspace",
+      workspace: "ActionOnSwift.xcodeproj/project.xcworkspace",
       scheme: "Release",
       export_method: "app-store",
       export_options: {
@@ -80,7 +80,7 @@ platform :ios do
       skip_submission: true,
       distribute_external: false,
       notify_external_testers: false,
-      ipa: "./Booklopedia.ipa"
+      ipa: "./ActionOnSwift.ipa"
     )
 
     delete_temp_keychain(keychain_name)
