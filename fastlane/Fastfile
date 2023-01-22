@@ -63,7 +63,11 @@ platform :ios do
       scheme: "ActionOnSwift",
       configuration: "Release",
       export_method: "app-store",
-      export_options: EXPORT_OPTIONS
+      export_options: {
+        provisioningProfiles: { 
+            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
+        }
+      }
     )
     upload_to_testflight
 
@@ -72,11 +76,11 @@ platform :ios do
     #   workspace: "ActionOnSwift.xcodeproj/project.xcworkspace",
     #   scheme: "ActionOnSwift",
     #   export_method: "app-store",
-    #   export_options: {
-    #     provisioningProfiles: { 
-    #         DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
-    #     }
-    #   }
+      # export_options: {
+      #   provisioningProfiles: { 
+      #       DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
+      #   }
+      # }
     # )
 
     # pilot(
