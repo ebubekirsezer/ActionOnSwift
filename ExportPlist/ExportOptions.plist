@@ -14,8 +14,6 @@
 	<dict>
 		<key>com.ebubekirsezer.ActionOnSwift</key>
 		<string>match AppStore com.ebubekirsezer.ActionOnSwift</string>
-		<key>com.ebubekirsezer.ActionOnSwift </key>
-		<string>match AppStore com.ebubekirsezer.ActionOnSwift macos</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>Apple Distribution</string>
