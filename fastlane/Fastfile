@@ -100,14 +100,14 @@ platform :ios do
       api_key: api_key
     )
 
-    build_mac_app(
+    build_ios_app(
       workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
       scheme: "ActionOnSwift",
       configuration: "Release",
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
-            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER_MACOS
+            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
         }
       }
     )
