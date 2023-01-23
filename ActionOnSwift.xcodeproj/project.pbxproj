@@ -19,8 +19,7 @@
 		CF620F98297C92E800EF8B6B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF620F9A297C92E900EF8B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF620F9E297C92E900EF8B6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CFC17FB1297D3C81008430BA /* ActionOnSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOnSwift.entitlements; sourceTree = "<group>"; };
-		CFC17FB2297D3C81008430BA /* ActionOnSwiftProduction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOnSwiftProduction.entitlements; sourceTree = "<group>"; };
+		CFC17FB7297F2035008430BA /* ActionOnSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOnSwift.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +52,10 @@
 		CF620F95297C92E800EF8B6B /* ActionOnSwift */ = {
 			isa = PBXGroup;
 			children = (
-				CFC17FB0297D3C52008430BA /* SupportingFiles */,
 				CF620F96297C92E800EF8B6B /* ActionOnSwiftApp.swift */,
 				CF620F98297C92E800EF8B6B /* ContentView.swift */,
 				CF620F9A297C92E900EF8B6B /* Assets.xcassets */,
+				CFC17FB7297F2035008430BA /* ActionOnSwift.entitlements */,
 				CF620F9D297C92E900EF8B6B /* Preview Content */,
 			);
 			path = ActionOnSwift;
@@ -68,15 +67,6 @@
 				CF620F9E297C92E900EF8B6B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CFC17FB0297D3C52008430BA /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				CFC17FB1297D3C81008430BA /* ActionOnSwift.entitlements */,
-				CFC17FB2297D3C81008430BA /* ActionOnSwiftProduction.entitlements */,
-			);
-			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,10 +263,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ActionOnSwift/ActionOnSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ActionOnSwift/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7FX9FX9T59;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
