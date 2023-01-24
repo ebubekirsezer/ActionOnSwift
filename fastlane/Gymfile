@@ -14,8 +14,6 @@ output_directory("./")
 
 scheme("ScreenMe")
 
-sdk("iphoneos16.0")
-
 clean(true)
 
 output_directory("./build")    # store the ipa in this folder
