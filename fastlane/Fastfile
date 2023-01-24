@@ -70,7 +70,7 @@ platform :ios do
       export_method: "app-store",
       export_options: EXPORT_OPTIONS_iOS
     )
-    upload_to_app_store
+    upload_to_testflight
     delete_temp_keychain(keychain_name)
   end
 end
