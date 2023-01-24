@@ -67,7 +67,6 @@ platform :ios do
       scheme: "ActionOnSwift",
       configuration: "Release",
       export_method: "app-store",
-      sdk: "iOS 16.0",
       export_options: {
         provisioningProfiles: { 
           DEVELOPER_APP_IDENTIFIER => PROVISIONING_PROFILE_SPECIFIER
