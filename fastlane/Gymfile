@@ -12,9 +12,9 @@
 
 output_directory("./")
 
-scheme("Example")
+scheme("ScreenMe")
 
-sdk("iphoneos9.0")
+sdk("iphoneos16.0")
 
 clean(true)
 
