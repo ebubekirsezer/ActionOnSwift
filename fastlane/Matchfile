@@ -2,7 +2,7 @@ git_url("https://github.com/ebubekirsezer/action-certificate.git")
 
 storage_mode("git")
 #platform("macos")
-#platform("ios")
+platform("ios")
 
 type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
 
