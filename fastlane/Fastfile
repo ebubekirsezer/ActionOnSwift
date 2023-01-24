@@ -36,6 +36,8 @@ end
 
 platform :ios do
 
+  default_platform(:ios)
+
   lane :closed_beta do
     keychain_name = TEMP_KEYCHAIN_USER
     keychain_password = TEMP_KEYCHAIN_PASSWORD
@@ -76,10 +78,9 @@ platform :ios do
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
-          DEVELOPER_APP_IDENTIFIER => PROVISIONING_PROFILE_SPECIFIER,
-          DEVELOPER_APP_IDENTIFIER => PROVISIONING_PROFILE_SPECIFIER_MACOS
+          DEVELOPER_APP_IDENTIFIER => PROVISIONING_PROFILE_SPECIFIER
         }
-    }
+      }
     )
     upload_to_app_store
     delete_temp_keychain(keychain_name)
