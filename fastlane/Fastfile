@@ -92,8 +92,7 @@ platform :ios do
 
     match(
       type: 'appstore',
-      platform: "macos",
-      additional_cert_types: "mac_installer_distribution",
+      platform: "ios",
       app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
       readonly: is_ci,
       git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
@@ -102,14 +101,14 @@ platform :ios do
       api_key: api_key
     )
 
-    build_mac_app(
+    build_ios_app(
       workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
       scheme: "ActionOnSwift",
       configuration: "Release",
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
-            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER_MACOS
+            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
         }
       }
     )
