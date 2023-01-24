@@ -36,8 +36,6 @@ end
 
 platform :ios do
 
-  default_platform(:ios)
-
   lane :closed_beta do
     keychain_name = TEMP_KEYCHAIN_USER
     keychain_password = TEMP_KEYCHAIN_PASSWORD
@@ -52,12 +50,6 @@ platform :ios do
     )
 
     increment_build_number(xcodeproj: "ActionOnSwift.xcodeproj")
-
-    settings_to_override = {
-      :BUNDLE_IDENTIFIER => DEVELOPER_APP_IDENTIFIER,
-      :PROVISIONING_PROFILE_SPECIFIER => PROVISIONING_PROFILE_SPECIFIER,
-      :DEVELOPMENT_TEAM => DEVELOPER_PORTAL_TEAM_ID
-    }
 
     match(
       type: 'appstore',
@@ -74,8 +66,8 @@ platform :ios do
       workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
       scheme: "ActionOnSwift",
       configuration: "Release",
-      xcargs: settings_to_override,
       export_method: "app-store",
+      sdk: "iOS 16.0",
       export_options: {
         provisioningProfiles: { 
           DEVELOPER_APP_IDENTIFIER => PROVISIONING_PROFILE_SPECIFIER
