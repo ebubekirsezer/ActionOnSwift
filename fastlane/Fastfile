@@ -68,13 +68,18 @@ platform :ios do
       api_key: api_key
     )
 
-    gym(
+    build_ios_app(
       workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
       scheme: "ActionOnSwift",
       configuration: "Release",
       xcargs: settings_to_override,
       export_method: "app-store",
-      export_options: EXPORT_OPTIONS_iOS
+      export_options: {
+        provisioningProfiles: { 
+          DEVELOPER_APP_IDENTIFIER => PROVISIONING_PROFILE_SPECIFIER,
+          DEVELOPER_APP_IDENTIFIER => PROVISIONING_PROFILE_SPECIFIER_MACOS
+        }
+    }
     )
     upload_to_app_store
     delete_temp_keychain(keychain_name)
