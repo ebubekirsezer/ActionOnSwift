@@ -2,6 +2,7 @@ default_platform(:ios)
 
 DEVELOPER_APP_ID = ENV["DEVELOPER_APP_ID"]
 DEVELOPER_APP_IDENTIFIER = ENV["DEVELOPER_APP_IDENTIFIER"]
+DEVELOPER_PORTAL_TEAM_ID = ENV["DEVELOPER_PORTAL_TEAM_ID"]
 PROVISIONING_PROFILE_SPECIFIER = ENV["PROVISIONING_PROFILE_SPECIFIER"]
 PROVISIONING_PROFILE_SPECIFIER_MACOS = ENV["PROVISIONING_PROFILE_SPECIFIER_MACOS"]
 TEMP_KEYCHAIN_USER = ENV["TEMP_KEYCHAIN_USER"]
@@ -47,10 +48,16 @@ platform :ios do
       duration: 1200,            
       in_house: false
     )
-    
+
     increment_build_number(xcodeproj: "ActionOnSwift.xcodeproj")
 
-    sync_code_signing(
+    settings_to_override = {
+      :BUNDLE_IDENTIFIER => DEVELOPER_APP_IDENTIFIER,
+      :PROVISIONING_PROFILE_SPECIFIER => PROVISIONING_PROFILE_SPECIFIER,
+      :DEVELOPMENT_TEAM => DEVELOPER_PORTAL_TEAM_ID
+    }
+
+    match(
       type: 'appstore',
       platform: "ios",
       app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
@@ -61,10 +68,11 @@ platform :ios do
       api_key: api_key
     )
 
-    build_app(
+    gym(
       workspace: "ActionOnSwift.xcodeproj/project.xcworkspace", 
       scheme: "ActionOnSwift",
       configuration: "Release",
+      xcargs: settings_to_override,
       export_method: "app-store",
       export_options: EXPORT_OPTIONS_iOS
     )
