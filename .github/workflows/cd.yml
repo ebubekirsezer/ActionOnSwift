@@ -50,10 +50,6 @@ jobs:
           APPLE_ISSUER_ID: '${{ secrets.APPLE_ISSUER_ID }}'
           APPLE_KEY_CONTENT: '${{ secrets.APPLE_KEY_CONTENT }}'
 
-      - name: Update Build Number
-        run: /usr/libexec/PlistBuddy -c "Set :CFBundleVersion 123" "$GITHUB_WORKSPACE/ActionOnSwift/Info.plist";
-        shell: bash
-
       - name: Archive Project
         run: xcodebuild -project ActionOnSwift.xcodeproj -scheme ActionOnSwift -destination 'generic/platform=iOS' -archivePath ../../builds/ActionOnSwift.xcarchive archive
         shell: bash
