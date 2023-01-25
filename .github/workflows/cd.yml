@@ -19,7 +19,7 @@ jobs:
 
       - name: Print Path
         uses: actions/checkout@v3
-        run: |
+        run:
           echo ${{ github.workspace }}
           echo $GITHUB_WORKSPACE
         shell: bash
