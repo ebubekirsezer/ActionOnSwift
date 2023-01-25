@@ -17,10 +17,39 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
+      - name: Sign Certificate with Fastlane
+        uses:  maierj/fastlane-action@v1.4.0
+        with:
+          lane: signCerts
+        env:
+          APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
+          DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
+          DEVELOPER_APP_IDENTIFIER: '${{ secrets.DEVELOPER_APP_IDENTIFIER }}'
+          DEVELOPER_PORTAL_TEAM_ID: '${{ secrets.DEVELOPER_PORTAL_TEAM_ID }}'
+          FASTLANE_APPLE_ID: '${{ secrets.FASTLANE_APPLE_ID }}'
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: '${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}'
+          MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
+          GIT_AUTHORIZATION: '${{ secrets.GIT_AUTHORIZATION }}'
+          PROVISIONING_PROFILE_SPECIFIER: '${{ secrets.PROVISIONING_PROFILE_SPECIFIER }}'
+          PROVISIONING_PROFILE_SPECIFIER_MACOS: '${{ secrets.PROVISIONING_PROFILE_SPECIFIER_MACOS }}'
+          TEMP_KEYCHAIN_PASSWORD: '${{ secrets.TEMP_KEYCHAIN_PASSWORD }}'
+          TEMP_KEYCHAIN_USER: '${{ secrets.TEMP_KEYCHAIN_USER }}'
+          APPLE_KEY_ID: '${{ secrets.APPLE_KEY_ID }}'
+          APPLE_ISSUER_ID: '${{ secrets.APPLE_ISSUER_ID }}'
+          APPLE_KEY_CONTENT: '${{ secrets.APPLE_KEY_CONTENT }}'
+
+      - name: Archive Project
+          run: xcodebuild -project ActionOnSwift.xcodeproj -scheme ActionOnSwift -destination 'generic/platform=iOS' -archivePath ../../builds/ActionOnSwift.xcarchive archive
+          shell: bash
+      
+      - name: Export Archive
+          run: xcodebuild -exportArchive -archivePath ../../builds/ActionOnSwift.xcarchive -exportPath ../../builds -exportOptionsPlist ../../ExportPlist/ExportOptions_iOS.plist
+          shell: bash
+
       - name: Deploy iOS Beta to TestFlight via Fastlane
         uses: maierj/fastlane-action@v1.4.0
         with:
-          lane: closed_beta_ios
+          lane: upload
         env:
           APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
           DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
