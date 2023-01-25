@@ -15,6 +15,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
+### ios upload_macos
+
+```sh
+[bundle exec] fastlane ios upload_macos
+```
+
+
+
 ### ios closed_beta
 
 ```sh

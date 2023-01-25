@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF620F92297C92E800EF8B6B"
-               BuildableName = "ActionOnSwift.app"
-               BlueprintName = "ActionOnSwift"
+               BuildableName = "ActionOnSwift iOS.app"
+               BlueprintName = "ActionOnSwift iOS"
                ReferencedContainer = "container:ActionOnSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF620F92297C92E800EF8B6B"
-            BuildableName = "ActionOnSwift.app"
-            BlueprintName = "ActionOnSwift"
+            BuildableName = "ActionOnSwift iOS.app"
+            BlueprintName = "ActionOnSwift iOS"
             ReferencedContainer = "container:ActionOnSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF620F92297C92E800EF8B6B"
-            BuildableName = "ActionOnSwift.app"
-            BlueprintName = "ActionOnSwift"
+            BuildableName = "ActionOnSwift iOS.app"
+            BlueprintName = "ActionOnSwift iOS"
             ReferencedContainer = "container:ActionOnSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
