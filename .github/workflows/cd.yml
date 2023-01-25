@@ -22,7 +22,11 @@ jobs:
         shell: bash
       
       - name: Print Path 2
-        run:  echo $GITHUB_WORKSPACE
+        run:  echo $GITHUB_WORKSPACE/ExportPlist/
+        shell: bash
+      
+      - name: Print Items
+        run:  ls $GITHUB_WORKSPACE/ExportPlist/
         shell: bash
       
       - name: Sign Certificate with Fastlane
