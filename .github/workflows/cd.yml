@@ -55,7 +55,7 @@ jobs:
         shell: bash
       
       - name: Export Archive
-        run: xcodebuild -exportArchive -archivePath ../../builds/ActionOnSwift.xcarchive -exportPath ../../builds -exportOptionsPlist ../../ExportPlist/ExportOptions_iOS.plist
+        run: xcodebuild -exportArchive -archivePath ../../builds/ActionOnSwift.xcarchive -exportPath ../../builds -exportOptionsPlist $GITHUB_WORKSPACE/ExportPlist/ExportOptions_iOS.plist
         shell: bash
       
       - name: Deploy iOS Beta to TestFlight via Fastlane
