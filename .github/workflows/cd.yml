@@ -16,6 +16,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
+
+      - name: Print Path
+        uses: actions/checkout@v3
+        run: |
+          echo ${{ github.workspace }}
+          echo $GITHUB_WORKSPACE
+        shell: bash
       
       - name: Sign Certificate with Fastlane
         uses:  maierj/fastlane-action@v1.4.0
