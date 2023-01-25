@@ -73,6 +73,7 @@ platform :ios do
       skip_submission: true,
       distribute_external: false,
       notify_external_testers: false,
+      ipa: "./builds/ActionOnSwift.ipa"
     )
 
     delete_temp_keychain(keychain_name)
