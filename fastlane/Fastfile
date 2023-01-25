@@ -65,6 +65,8 @@ platform :ios do
   end
 
   lane :upload do 
+    keychain_name = TEMP_KEYCHAIN_USER
+    keychain_password = TEMP_KEYCHAIN_PASSWORD
 
     api_key = app_store_connect_api_key(
       key_id: APPLE_KEY_ID,
@@ -83,7 +85,6 @@ platform :ios do
       notify_external_testers: false,
       ipa: "../../builds/ActionOnSwift.ipa"
     )
-
     delete_temp_keychain(keychain_name)
   end
 
