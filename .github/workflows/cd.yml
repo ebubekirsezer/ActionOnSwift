@@ -62,12 +62,20 @@ jobs:
           APPLE_ISSUER_ID: '${{ secrets.APPLE_ISSUER_ID }}'
           APPLE_KEY_CONTENT: '${{ secrets.APPLE_KEY_CONTENT }}'
 
+      - name: Export 1
+        run: export LANG=en_US.UTF-8
+        shell: bash
+      
+      - name: Export 2
+        run: export LANGUAGE=en_US.UTF-8
+        shell: bash
+
+      - name: Export 3
+        run: export LC_ALL=en_US.UTF-8
+        shell: bash
+      
       - name: Override Build Version
-        run: 
-          export LANG=en_US.UTF-8
-          export LANGUAGE=en_US.UTF-8
-          export LC_ALL=en_US.UTF-8
-          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion 125" "$GITHUB_WORKSPACE/ActionOnSwift/Info.plist";
+        run: /usr/libexec/PlistBuddy -c "Set :CFBundleVersion 125" "$GITHUB_WORKSPACE/ActionOnSwift/Info.plist";
         shell: bash
 
       - name: Archive Project
