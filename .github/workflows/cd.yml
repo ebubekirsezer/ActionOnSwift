@@ -63,7 +63,7 @@ jobs:
           APPLE_KEY_CONTENT: '${{ secrets.APPLE_KEY_CONTENT }}'
 
       - name: Override Build Version
-        run: /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "$GITHUB_WORKSPACE/ActionOnSwift/Info.plist";
+        run: /usr/libexec/PlistBuddy -c "Set :CFBundleVersion 125" "$GITHUB_WORKSPACE/ActionOnSwift/Info.plist";
         shell: bash
 
       - name: Archive Project
